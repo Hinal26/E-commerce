@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const bookSchema = new mongoose.Schema(
+const stationarySchema = new mongoose.Schema(
   {
-    book_name: {
+    stationary_name: {
       type: String,
       trim: true,
     },
-    book_dis: {
-      type: String,
+    products: {
+      type: Number,
       trim: true,
     },
-    book_price: {
+    price: {
       type: Number,
       trim: true,
     },
@@ -25,5 +25,5 @@ const bookSchema = new mongoose.Schema(
   }
 );
 
-const Book = mongoose.model("book", bookSchema);
-module.exports = Book;
+const Stationary = mongoose.model("stationary", stationarySchema);
+module.exports = Stationary;

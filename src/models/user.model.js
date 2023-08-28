@@ -1,18 +1,21 @@
 const mongoose = require("mongoose");
 
-const movieSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
-    movie_name: {
+    first_name: {
       type: String,
       trim: true,
     },
-    tickets: {
-      type: Number,
+    last_name: {
+      type: String,
       trim: true,
     },
-    price: {
-      type: Number,
+    email: {
+      type: String,
       trim: true,
+    },
+    password: {
+      type: String,
     },
     is_active: {
       type: Boolean,
@@ -25,5 +28,5 @@ const movieSchema = new mongoose.Schema(
   }
 );
 
-const Movie = mongoose.model("movie", movieSchema);
-module.exports = Movie;
+const User = mongoose.model("user", userSchema);
+module.exports = User;

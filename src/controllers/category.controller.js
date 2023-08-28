@@ -1,19 +1,19 @@
-const { bookService } = require('../services');
+const { categoryService } = require('../services');
 
-/* Create book */
-const createBook = async (req, res) => {
+/* Create category */
+const createCategory = async (req, res) => {
     try {
         const reqBody = req.body;
 
-        const book = await bookService.createBook(reqBody);
-        if (!book) {
+        const user = await categoryService.createCategory(reqBody);
+        if (!user) {
             throw new Error("Something went wrong, please try again or later!");
         }
 
         res.status(200).json({
             success: true,
-            message: "Book create successfully!",
-            data: { book },
+            message: "Category create successfully!",
+            data: { reqBody },
           });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
@@ -21,5 +21,5 @@ const createBook = async (req, res) => {
 };
 
 module.exports = {
-    createBook
+    createCategory
 }
